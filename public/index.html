@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div class="container">
+        <div class="accordion">
+            <button id="openModalBtn">Create Note</button>
+        </div>
+        <div class="notes-grid" id="notesGrid">
+        </div>
+    </div>
+
+    <div class="modal" id="createNoteModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreateNoteModal()">&times;</span>
+            <h2>Create a New Note</h2>
+            <form id="createNoteForm">
+                <label for="noteTitle">Title:</label>
+                <input type="text" id="noteTitle" required>
+    
+                <label for="noteContent">Content:</label>
+                <textarea id="noteContent" rows="4" required></textarea>
+    
+                <button type="button" onclick="createNote()">Create</button>
+            </form>
+        </div>      
+    </div>
+
+    
+    <div class="modal" id="singleNoteModal">
+        
+    </div>
+
+    <div class="modal" id="updateNoteModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUpdateNoteModal()">&times;</span>
+            <h2>Update Note</h2>
+            <form id="updateNoteForm">
+                <label for="updateNoteTitle">Title:</label>
+                <input type="text" id="updateNoteTitle" required>
+    
+                <label for="updateNoteContent">Content:</label>
+                <textarea id="updateNoteContent" rows="4" required></textarea>
+    
+                <button type="button" onclick="updateNote()">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div id="notesGrid">
+
+    </div> -->
+    
+    <script src="../dist/main.js"></script>
+</body>
+</html>
